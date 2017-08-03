@@ -12,7 +12,7 @@ var global={
 	//WEBSITE:"http://localhost/dfyc",
 	userId:''
 }
-/**
+/**sijia
  * 客户端信息对象，此对象本身是个模板，实例化后会进行本地保存，不同类型客户端请修改cli
  * @type {{ver: number, cli: number, openid: string, openidmd5: string, token: string}}
  * @private
