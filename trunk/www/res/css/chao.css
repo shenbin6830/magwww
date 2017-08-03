@@ -1,0 +1,262 @@
+/*我观看的问题*/
+.messageitem-question {
+  display: block;
+  padding-bottom: 12px;
+  line-height: 26px;
+  font-size: 17px;
+  color: #000;
+  opacity: .87;
+}
+.z-messageitem-question {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.44;
+  color: rgba(0,0,0,.87);
+  padding-bottom: 0;
+}
+.messagelist {
+  margin-bottom: 10px;
+  background: #fff;
+}
+.common-mb-ten {
+  margin-bottom: 10px;
+}
+.coupon-t h2, .mt6 {
+  margin-bottom: 6px;
+}
+.expert-user-list {
+  right: 82px;
+  left: 41px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.expert-user-list, .expert-user-list-rt {
+  position: absolute;
+  font-size: 13px;
+  color: rgba(0,0,0,.38);
+}
+.line20, .mt-lt40, .mt25 {
+  line-height: 20px;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+}
+/*
+已抢答列表答案
+*/
+.pk-article-content-item, .pk-write-article-title {
+  border-bottom: 1px solid #f2f2f2;
+  box-sizing: border-box;
+}
+.article-item-content {
+  width: 100%;
+  color: #666;
+  font-size: 16px;
+  padding-top: 14px;
+  line-height: 24px;
+  padding-left: 5%;
+  padding-right: 10%;
+}
+.common-fix-main {
+  overflow-y: scroll;
+  top: 0;
+  bottom: 44px;
+  -webkit-overflow-scrolling: touch;
+}
+/**
+去抢答
+*/.day-home.mt10 {
+  margin-top: 0;
+  border-style: solid;
+  border-color: #ddd;
+  background-color: #fff;
+  color:#444;
+  display: block;
+  border-width: 1px;
+}
+.day-time {
+  color: #f26161;
+  padding-top: 12px;
+}
+.pd-lr15 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.mr3 {
+  margin-right: 3px;
+}
+.fs14 {
+  font-size: 14px;
+}
+.day-times {
+  color: #f26161;
+}
+.col-f26161 {
+  font-size: 14px;
+  color: #f26161;
+}
+.day-tit {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.87);
+  padding-top: 7px;
+}
+.day-race {
+  padding: 5px 16px 14px;
+  margin-bottom: 15px;
+}
+.col38 {
+  color: rgba(0,0,0,.38);
+}
+.col-f26161 {
+  color: rgba(0,0,0,.38);
+  border-color: rgba(0,0,0,.38);
+}
+.race-answer-btn {
+  padding: 2px 18px;
+  border: 1px solid #f26161;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 18px;
+  height: 25px;
+  background-color: #f26161;
+  color: #fff;
+}
+<!--选择答案-->
+    .best {
+  width: 67px;
+  height: 15px;
+  line-height: 14px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background-color: #f26161;
+  position: absolute;
+  z-index: 11;
+  top: 11px;
+  left: -17px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.bg-white .pk-search-user-item {
+  border-bottom: none;
+  border-top: 1px solid #f2f2f2;
+}
+.pk-search-user-item {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+}
+.pk-common-img-box40 {
+  width: 40px;
+  height: 40px;
+}
+.img-bg-expert {
+  background: url(/public/mobile/images/zj.png);
+  background-size: contain;
+}
+
+.common-img-wd16 {
+  width: 16px;
+  height: 16px;
+}
+.pk-search-user-item-intro {
+  font-size: 16px;
+  padding: 0 87px 0 48px;
+}
+.pk-attention-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.38);
+  margin-top: -9px;
+  padding: 0 16px 0 63px;
+  margin-bottom: 13px;
+  position: relative;
+}
+.pk-common-text_lens {
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.reward-img-best {
+  line-height: 20px;
+}
+.daily-avatar {
+  height: 46px;
+  line-height: 46px;
+  padding: 0 16px;
+}
+.messageitem-byline {
+  font-size: 16px;
+  line-height: 0;
+  margin-bottom: 10px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(0,0,0,.38);
+}
+.mt12 {
+  margin-top: 12px;
+}
+.day-avatar {
+  font-size: 14px;
+  width: 89%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+  .lineh46 {
+    line-height: 46px;
+  }
+.ml5 {
+  margin-left: 5px;
+}
+.three-points {
+  position: relative;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.day-tit-daily {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.87);
+  margin-top: -15px;
+}
+.text_box {
+  margin: 0px 0px 12px 0px;
+  height: auto;
+  padding: 30px 1px;
+  border-radius: 4px;
+  clear: both;
+}
+.free_text {
+  background: #f7766a;
+}
+.messagelist .answer .audiojs, .messagelist .answer .voice_text {
+  margin-top: 0;
+}
+<!--悬赏列表-->
+    .sort-nav {
+      height: 29px;
+      padding: 0 16px;
+      line-height: 29px;
+      color: rgba(0,0,0,.54);
+    }
+.border-bottom-ten {
+  border-bottom: 10px solid #f2f2f2;
+}

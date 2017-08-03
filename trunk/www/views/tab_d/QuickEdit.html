@@ -1,0 +1,76 @@
+<!--QuickList，抢答新建/编辑-->
+<ion-view view-title='抢答' cache-view='false'>
+  <ion-content class="has-header" >
+	<!--修改-->
+	<ul class="list">
+    <li class="item">
+      <span class="fl" style="line-height: 40px;">问题标题：</span>
+      <input class="fl" type="text" placeholder="问题标题"  ng-model="obj.title" style="padding-left: 5px;width: 60%;">
+    </li>
+    <div class="row item item-input-wrapper" style="margin-top: 0px; padding-top:0px;">
+      <div class="col col-20" style="text-align: left;padding-top: 10px;">
+        <span style="font-size: 16px;">问题：</span>
+      </div>
+      <div class="col col-80">
+        <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder="请输入具体问题"  ng-model="obj.question"></textarea>
+      </div>
+    </div>
+    <!--<li class="item">-->
+      <!--<span class="fl" style="line-height: 40px;">每个奖金：</span>-->
+      <!--<input class="fl" type="number" min="1000" max="10000" step="100" placeholder="请输入100的倍数"  ng-model="obj.priceeach" style="padding-left: 5px;width: 60%;">-->
+    <li class="item">
+      <label class=" item-input item-select">
+        <div class="input-label">
+          每个奖金：
+        </div>
+        <select ng-model="obj.priceeach">
+          <option value="1000">1000</option>
+          <option value="2000">2000</option>
+          <option value="3000">3000</option>
+          <option value="4000">4000</option>
+          <option value="5000">5000</option>
+          <option value="6000">6000</option>
+          <option value="7000">7000</option>
+          <option value="8000">8000</option>
+          <option value="9000">9000</option>
+          <option value="10000">10000</option>
+        </select>
+      </label>
+    </li>
+    <!--</li>-->
+    <li class="item">
+      <span class="fl" style="line-height: 40px;">奖金数量：</span>
+      <input class="fl" type="text" placeholder="奖金数量"  ng-model="obj.pricenum" style="padding-left: 5px;width: 60%;">
+    </li>
+   <!-- <li class="item">
+      <span class="fl" style="line-height: 40px;">观看费：</span>
+      <input class="fl" type="text" placeholder="总奖金的1%"  ng-model="obj.viewprice" style="padding-left: 5px;width: 60%;" disabled>
+    </li>-->
+    <li class="item">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          开始日期
+        </div>
+        <select ng-model="obj.obj1">
+          <option value="1">今天</option>
+          <option value="2">明天</option>
+          <option value="3">后天</option>
+        </select>
+      </label>
+    </li>
+    <li class="item">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          悬赏天数
+        </div>
+        <select ng-model="obj.obj2">
+          <option value="1">一天</option>
+          <option value="2">两天</option>
+          <option value="3">三天</option>
+        </select>
+      </label>
+    </li>
+    <li class="item"><a ng-click="save()" class="button button-full button-balanced">保存</a></li>
+	</ul>
+  </ion-content>
+</ion-view>

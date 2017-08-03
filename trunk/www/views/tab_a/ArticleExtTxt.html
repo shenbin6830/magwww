@@ -1,0 +1,35 @@
+<!--ArticleExtTxtShow，文章内容详细信息-->
+<ion-view view-title='文章内容' cache-view='false' hide-nav-bar="true">
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20" >
+      <a  ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left" style="font-size: 28px;color: #fff;"></i><span style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">返回</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item  style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">文章内容</ion-item>
+    </div>
+  </div>
+  <ion-content class=" has-header">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="pk-article-content">
+      <div class="common-fix-main">
+        <!-- 用来放文章图片的区域-->
+        <div class="pk-article-content-img bgfff">
+
+        </div>
+        <!--文章区域-->
+        <div class="pk-article-content-item " style="background: #fff;margin-bottom: 10px;">
+          <!--文章标题-->
+          <h2 class="ng-binding" style="margin-top: 20px;margin-left: 15px;font-size: 25px;font-weight:bold;">{{obj.idString}}</h2>
+          <!--作者区域-->
+          <div class="clearfix" style="margin-left: 15px;margin-top: 10px;">作者：{{obj.idArticleObj.author}}</div>
+          <!--文章内容区域-->
+          <div class="article-item-content" style="margin-right:8px;padding-right: 10px;" data-ng-bind-html="obj.txt" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

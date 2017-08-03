@@ -1,0 +1,17 @@
+<!--RechargeList，充值项目列表-->
+<ion-view view-title="充值">
+	<ion-content class="has-tabs has-header">
+          <span class="right dark big_size" style="line-height: 26px; padding: 15px 0;">
+            <label style="font-size: 14px; display: inline-block; margin-right: 10px;" ng-repeat="obj in list">
+              <input type="radio" name="group" ng-model="vm.rechargeId" value="{{obj.id}}" checked="checked"> {{obj.price}}元
+            </label>
+          </span>
+        <div class="login_button">
+            <a class="button button-block button-assertive login_button_ab" ng-click="orderrRechargePay()">充值</a>
+        </div>
+
+
+        <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+        <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+    </ion-content>
+</ion-view>

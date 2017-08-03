@@ -1,0 +1,55 @@
+<!--QuestionList，一对一问题列表-->
+<ion-view view-title='我的' cache-view='false' hide-nav-bar="true">
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20">
+      <a ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left" style="font-size: 28px;color: #fff;"></i><span style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">我的</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item ng-if="act==0" style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">我发布的抢答列表答案</ion-item>
+      <ion-item ng-if="act==1" style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">观看抢答的答案</ion-item>
+      <ion-item ng-if="act==2" style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">已抢答列表答案</ion-item>
+    </div>
+  </div>
+  <ion-content class="has-tabs has-header" >
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+
+    <div ng-repeat="obj in list">
+      <div class="messageitem-byline daily-avatar reward-img-best"  ng-if="act!=2" style="margin-top: 10px;">
+        <div style="height: 100%;" >
+          <div class="col38 day-avatar fl ml5 lineh46">回答者
+            <span class="dian-lr">:</span>
+            {{obj.memberAnString}}
+          </div>
+          <i ng-if="selectedAnswer" style="width: 67px; height: 15px;line-height: 14px; color: #fff; font-size: 12px; text-align: center; background-color: #f26161; position: absolute; z-index: 11;top: 11px; left: -17px; -webkit-transform: rotate(-45deg);transform: rotate(-45deg);">最佳</i>
+          <input ng-if="act==0&&!selectedAnswer" type="checkbox"   ng-model="Selected"  ng-disabled="disable"  name="items" ng-click="check(obj.id,Selected,obj.quickIdQuickObj.pricenum)"    value="{{obj.id}}" style="float:right"  />
+        </div>
+      </div>
+      <p class=" day-tit-daily pd-lr15 three-points" ng-if="act!=2">
+        {{obj.answer}}
+
+
+      </p>
+
+
+      <!--act=2已抢答列表答案-->
+      <div class="common-fix-main" style="max-width: 768px;" ng-if="act==2">
+        <div class="pk-article-content-item" style="background: #fff; margin-bottom: 10px;"></div>
+        <a><span style="color: rgba(0, 0, 0, 0.87);padding-left: 30px;font-size:16px">问题：{{obj.quickIdQuickObj.question}} </span></a>
+        <div class="clearfix" style="padding-left: 30px;">
+          <a>回答者:{{obj.memberAnString}}</a>
+        </div>
+        <div class="article-item-content" style="width:100%;background-color:rgb(255,250,242); ">
+          <p>{{obj.answer}}</p>
+
+        </div>
+      </div>
+    </div>
+    <div ng-if="list.length>0&&act==0&&!selectedAnswer" ng-click="save(list[0].quickIdQuickObj.pricenum)" class="button  button-balanced button-full">保存满意答案</div>
+    </div>
+
+    <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+
+  </ion-content>
+
+</ion-view>

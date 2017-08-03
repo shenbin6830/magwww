@@ -1,0 +1,15 @@
+扫二维码创建关系，点击转发创建关系
+先扫二维码
+
+
+签到
+需求：用户连续签到，第1天1积分，第2天2积分。。。第7天7分，第8天1积分，第9天2积分。。。
+设计：
+【签到接口】
+参数：无
+后台:创建new 今天signin,根据token找到user，
+查重今天签到，有：退
+查询昨天签到：select * from signin,gmtCreate在昨天和memberId=tokenUserId，
+有昨天signin的话，看下昨天signin的sindex是多少，根据此sindex,赋 今天signin（ ,小于7+1,大于7则=1），
+signin save.
+加积分

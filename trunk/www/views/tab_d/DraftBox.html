@@ -1,0 +1,92 @@
+<ion-view view-title="草稿箱" cache-view="false" hide-nav-bar="true">
+  <ul class="pk-submenu" style="margin-bottom: 9px;" ng-if="vm.tab=='ask'">
+    <!-- ngIf: IS_EXPERT==1 -->
+    <li class="pk-submenu-item active"   ng-click="ask()"><span >提问</span></li>
+    <li class="pk-submenu-item"   ng-click="article()"><span>文章</span></li>
+    <li class="pk-submenu-item"   ng-click="reward()"><span>悬赏</span></li>
+  </ul>
+  <ul class="pk-submenu" style="margin-bottom: 9px;" ng-if="vm.tab=='article'">
+    <!-- ngIf: IS_EXPERT==1 -->
+    <li class="pk-submenu-item "   ng-click="ask()"><span >提问</span></li>
+    <li class="pk-submenu-item active"   ng-click="article()"><span>文章</span></li>
+    <li class="pk-submenu-item"   ng-click="reward()"><span>悬赏</span></li>
+  </ul>
+  <ul class="pk-submenu" style="margin-bottom: 9px;" ng-if="vm.tab=='reward'">
+    <!-- ngIf: IS_EXPERT==1 -->
+    <li class="pk-submenu-item "   ng-click="ask()"><span >提问</span></li>
+    <li class="pk-submenu-item"   ng-click="article()"><span>文章</span></li>
+    <li class="pk-submenu-item active"   ng-click="reward()"><span>悬赏</span></li>
+  </ul>
+  <ion-content class="has-tabs has-header" >
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <ion-list class="list">
+      <div ng-if="list.length>0" ng-repeat="obj in list">
+        <ion-item  collection-item-width="101%" >
+          <div class="row" style="padding:4px 0;">
+            <div class="whoask_bg zhika-detail-mt0" style="margin-bottom: 10px;">
+              <div class="mt-lt40 clearfix" ng-click="EditQuestion(obj)">
+                <span>这是草稿箱标题：{{obj.myname}}</span>
+              </div>
+              <div class="answer dont-repeat" data-free="0" data-price="5" is_voice="0" answer_id="9550" has_get="1">
+                <div
+                  style="width: 225px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color: rgb(245, 166, 35);"
+                  ng-click="delete(obj,$event)">
+                  <div class="yy" style="display: block;">
+                    <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+                      <i class="iconfont icon-wenbenhuida"></i>
+                    </div>
+                    <div class="text_lable ng-binding" ng-click="DelQuestion(obj)">问答删除</div>
+                    <div class="text_num mr24">个字&nbsp;<i class="icon ion-ios-book-outline"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--<div class="col-10" style="font-size: 14px;text-align:right; line-height: 16px; color: #808080;">{{obj.articleIdString}}</div>-->
+            <!--<div class="col-30" style="text-align:right; font-size: 12px; color: #f00;position: absolute; right:16px; top:14px;">单价：￥{{obj.memberAuString}}</div>-->
+          </div>
+        </ion-item>
+      </div>
+      <div ng-if="list1.length>0" ng-repeat="obj1 in list1">
+        <ion-item  collection-item-width="101%">
+          <div class="row" style="padding:4px 0;">
+            <div class="whoask_bg zhika-detail-mt0" style="margin-bottom: 10px;">
+              <div class="mt-lt40 clearfix" ng-click="EditQuick(obj1)">
+                <span>这是草稿箱标题：{{obj1.myname}}</span>
+              </div>
+              <div class="answer dont-repeat" data-free="0" data-price="5" is_voice="0" answer_id="9550" has_get="1">
+                <div
+                  style="width: 225px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color: rgb(245, 166, 35);"
+                  >
+                  <div class="yy" style="display: block;">
+                    <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+                      <i class="iconfont icon-wenbenhuida"></i>
+                    </div>
+                    <div class="text_lable ng-binding" ng-click="DelQuick(obj1)">悬赏删除123</div>
+                    <div class="text_num mr24">个字&nbsp;<i class="icon ion-ios-book-outline"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-10" style="font-size: 14px;text-align:right; line-height: 16px; color: #808080;">{{obj1.articleIdString}}</div>
+             <div class="col-30" style="text-align:right; font-size: 12px; color: #f00;position: absolute; right:16px; top:14px;">单价：￥{{obj1.memberAuString}}</div>-->
+          </div>
+        </ion-item>
+      </div>
+      <div ng-if="list2.length>0" ng-repeat="obj2 in list2">
+        <ion-item  collection-item-width="101%">
+          <div class="row" style="padding:4px 0;">
+            <div class="whoask_bg zhika-detail-mt0" style="margin-bottom: 10px;">
+              <div class="mt-lt40 clearfix" ng-click="EditArticle(obj2)">
+                <span>这是文章草稿箱标题：{{obj2.myname}}</span>
+              </div>
+            </div>
+            <!-- <div class="col-10" style="font-size: 14px;text-align:right; line-height: 16px; color: #808080;">{{obj1.articleIdString}}</div>
+             <div class="col-30" style="text-align:right; font-size: 12px; color: #f00;position: absolute; right:16px; top:14px;">单价：￥{{obj1.memberAuString}}</div>-->
+          </div>
+        </ion-item>
+      </div>
+      <ion-infinite-scroll  on-infinite="more()" distance="1%" ng-if="list.length>0&&page.hasNextPage"></ion-infinite-scroll>
+      <ion-infinite-scroll  on-infinite="more1()" distance="1%" ng-if="list1.length>0&&page1.hasNextPage"></ion-infinite-scroll>
+    </ion-list>
+  </ion-content>
+</ion-view>

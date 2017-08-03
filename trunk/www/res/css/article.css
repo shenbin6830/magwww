@@ -1,0 +1,122 @@
+.common-mb-ten {
+  margin-bottom: 10px;
+}
+.messagelist {
+  margin-bottom: 10px;
+  background: #fff;
+}
+.messageitem-inner {
+  position: relative;
+  padding: 1px 2px;
+}
+
+.coupon-t h2, .mt6 {
+  margin-bottom: 6px;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.common-img100 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.common-img-box20 {
+  width: 20px;
+  height: 20px;
+}
+
+.line20, .mt-lt40, .mt25 {
+  line-height: 20px;
+}
+.expert-user-list {
+  font-size: 13px;
+  position: absolute;
+  right: 82px;
+  left: 41px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expert-user-list-rt {
+  position: absolute;
+  right: 16px;
+  font-size: 13px;
+}
+
+.z-messageitem-question {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.44;
+  color: rgba(0,0,0,.87);
+  padding-bottom: 0;
+}
+.messageitem-question {
+  padding-bottom: 12px;
+  line-height: 26px;
+  font-size: 17px;
+  color: #000;
+  opacity: .87;
+}
+.pk-common-text_lens {
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.pk-common-text_len, .pk-common-text_lens {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.messagelist .answer {
+  padding-top: 10px;
+}
+
+.messagelist .answer.dont-repeat {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.default-culomn {
+  box-sizing: border-box;
+  position: relative;
+  height: 60px;
+  padding: 10px;
+  background: #fdfdfd;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+}
+.default-culomn .left {
+  float: left;
+  height: 100%;
+  margin-right: 12px;
+}
+.default-culomn .middle {
+  margin-right: 30px;
+}
+.default-culomn .middle .title {
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.default-culomn .middle .info {
+  height: 12px;
+  margin-top: 4px;
+  line-height: 12px;
+  font-size: 12px;
+  color: rgba(0,0,0,.38);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

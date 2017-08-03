@@ -1,0 +1,132 @@
+<!--首页my-->
+<ion-view view-title='我的' hide-nav-bar="true" class="allweb" style="background-color: #ffffff" cache-view="false">
+    <ion-header-bar class="bar-positive " style="height: 200px;border: none;">
+        <div style="width: 100%;height: 100%">
+            <div style="width: 100%;height: 70%; text-align: center;">
+              <div  ng-if="pubmemberSub.name!=null " >
+                <!--'{{pubmemberSub.img1}}'-->
+                  <!-显示等级。今币，姓名，经验-->
+                <div style="display:inline;width: 33%;height:50%;float:left; ">
+                <div style=" display: block"> <img src="res/img/icon_lv1.png" style="width: auto;display: inline float:left" height="20px" ><span ng-bind="pubmemberSub.mlevel"></span> 今币:<span ng-bind='pubmemberSub.score'></span></div>
+                <a  style=" display: block; font-size: 16px; color: #fff; margin-top: 10px;">
+                                   {{pubmemberSub.name}}
+                </a>
+                <div nf-if="pubmemberSub.name!=null ">经验:<span ng-bind="pubmemberSub.exp">  </span>   升级还需<span ng-bind="pubmemberSub.exp|needlev"></span></div>
+                  <div ng-if="pubmemberSub.mtype==1" class="fl" style="line-height: 40px;">咨询费：<input class="fl" type="text"  ng-model="pubmemberSub.price" style="padding-left: 5px;width: 60%;display: inline;" ><span style="color: red;" ng-click="PriceUpdate(pubmemberSub)">修改</span></div>
+                </div>
+                <!-显示头像-->
+                <div style="display:inline;width: 30%;height:50%;float:left; ">
+                  <img reset_img="Doc" src="{{pubmemberSub.img1}}" style="width:60px;height:60px;border-radius: 50%;margin-top: 15px;"  ng-if="pubmemberSub.name!=null "/>
+                </div>
+                    <!-二维码-->
+                <div style="display:inline;width: 33%;height:50%;float:left; ">
+                  </a><img ng-src="{{pubmemberSub.imgqr}}" style="width: 55%;height: 55%" />
+                </div>
+              </div>
+                <a ng-if="pubmemberSub.name==null" ng-click=" login()" style=" display: block; font-size: 16px; margin-top:10px; color: #fff; letter-spacing: 1px; text-align: center;margin-top: 20%" >登录/注册</a></p>
+
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-tabs has-header">
+      <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ul class="list">
+          <li class="row" style="width: 100%;height: 30px;border:none;margin-top: 110px;">
+            <a class="wo_alldingdan" style="width: 100%;background-color: white" >
+              <p style=" text-indent: 1em;margin-top: 8px; font-size: 18px; color: #333">我的</p>
+            </a>
+          </li>
+            <a class="list card">
+              <a href="#/tab/QuickEdit" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-list" style="color: #37bde2;"></i>
+                <span style="font-size: 14px;">发布悬赏</span>
+              </a>
+              <a href="#/tab/QuickList/1" class="item item-icon-left" ng-if="pubmemberSub.name!=null&&pubmemberSub.mtype===1">
+                <i class="icon ion-ios-compose"></i>
+                <span style="font-size: 14px;">去抢答<sapn  ng-bind="newQuickMeg" style="margin-left:10%;"></sapn></span>
+              </a>
+              <a href="#/tab/questionQuAndAn/0" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-browsers-outline" style="color: #f6a566"></i>
+                <span style="font-size: 14px;">我问别人的问题</span>
+              </a>
+           <!--   <a href="#/tab/DraftBox" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-cube" style="color: #f6a566"></i>
+                <span style="font-size: 14px;">草稿箱</span>
+              </a>-->
+              <a href="#/tab/QuestionLinkMemberView/0" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-copy-outline" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">我观看的问题</span>
+              </a>
+              <a href="#/tab/QuickList/0" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-download-outline" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">我发布的悬赏问题列表</span>
+              </a>
+              <a href="#/tab/QuickLinkMemberViewList" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-bookmarks-outline" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">我观看的悬赏问题列表</span>
+              </a>
+              <a href="#/tab/QuickTxtList/0/2/10000" class="item item-icon-left" ng-if="pubmemberSub.name!=null&&pubmemberSub.mtype===1">
+                <i class="icon ion-ios-book-outline" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">已抢答列表</span>
+              </a>
+              <a  href="#/tab/questionQuAndAn/1" class="item item-icon-left" ng-if="pubmemberSub.name!=null&&pubmemberSub.mtype===1">
+                <i class="icon ion-ios-rose-outline" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">别人问我的问题<sapn ng-bind="newQesMeg" style="margin-left:10%;"></sapn></span>
+              </a>
+              <a  href="#/tab/MyArticle" class="item item-icon-left" ng-if="pubmemberSub.name!=null&&pubmemberSub.mtype==1">
+                <i class="icon ion-pricetag"></i>
+                <span style="font-size: 14px;">我的文章</span>
+              </a>
+              <a  href="#/tab/ArticleCreate" class="item item-icon-left" ng-if="pubmemberSub.name!=null&&pubmemberSub.mtype==1">
+                <i class="icon ion-university"></i>
+                <span style="font-size: 14px;">发布文章</span>
+              </a>
+              <a href="#/tab/Editmember" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ios-copy" style="color:#ee444f"></i>
+                <span style="font-size: 14px;">个人信息</span>
+              </a>
+              <a ng-click="memberSign()" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-ionic" style="color:#ee444f"></i>
+                <span style="font-size: 14px;">签到</span>
+              </a>
+              <a href="#/tab/User/{{obj.id}}" class="item item-icon-left" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-more" style="color: #ee6d58"></i>
+                <span style="font-size: 14px;">修改密码</span>
+              </a>
+              <a  class="item item-icon-left" ng-click="logout();" ng-if="pubmemberSub.name!=null">
+                <i class="icon ion-loop" style="color: #74c5bc"></i>
+                <span style="font-size: 14px;">退出登录</span>
+              </a>
+              <a  class="item item-icon-left" ng-click="clearSession();">
+                <i class="icon ion-refresh" style="color: #ffa200"></i>
+                <span style="font-size: 14px;">清除缓存</span>
+              </a>
+              <a href="#/tab/waiterPhone" class="item item-icon-left">
+                <i class="icon ion-ios-telephone" style="color: #5b99ee"></i>
+                <span style="font-size: 14px;">客服电话</span>
+              </a>
+              <a href="#/tab/RechargeList" class="item item-icon-left">
+                <i class="icon ion-ios-rose" style="color: #5b99ee"></i>
+                <span style="font-size: 14px;">充值</span>
+              </a>
+              <a href="#/tab/Qrcode" class="item item-icon-left">
+                <i class="icon ion-calendar" style="color: #35b87f"></i>
+                <span style="font-size: 14px;">二维码</span>
+              </a>
+              <a href="#/tab/MemberRelationList/0" class="item item-icon-left">
+                <i class="icon ion-calendar" style="color: #35b87f"></i>
+                <span style="font-size: 14px;">我的上级</span>
+              </a>
+              <a href="#/tab/MemberRelationList/1" class="item item-icon-left">
+                <i class="icon ion-calendar" style="color: #35b87f"></i>
+                <span style="font-size: 14px;">我的下级</span>
+              </a>
+              <a href="#/tab/aboutus" class="item item-icon-left">
+                <i class="icon ion-ios-information-outline" style="color: #f26d5f"></i>
+                <span style="font-size: 14px;">关于我们【1.0.0.1(1)】</span>
+              </a>
+            </div>
+        </ul>
+    </ion-content>
+</ion-view>
+

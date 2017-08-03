@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="res/lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="res/css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!--核心库-->
+    <!-- ionic/angularjs js -->
+    <script src="res/lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="res/lib/angular/ng-file-upload/ng-file-upload.js"></script>
+
+    <!--第三方工具-->
+    <script src="res/lib/underscore.js"></script>
+    <script src="res/lib/zmax/global.js"></script>
+    <script src="res/lib/zmax/hashmap.js"></script>
+
+    <!-- change -->
+    <script src="res/change/siteUrlWww.js"></script>
+    <!--配置-->
+    <script src="rjs/acfg.js"></script>
+
+
+    <!--beans-->
+    <script src="beans/beans.js"></script>
+    <script src="beans/pubbeans.js"></script>
+    <script src="beans/levelone.js"></script>
+
+    <!-- your app's js -->
+    <script src="rjs/app.js"></script>
+    <script src="rjs/biz.js"></script>
+    <script src="rjs/route_t.js"></script>
+    <script src="rjs/route_test.js"></script>
+
+    <script src="rjs/diret.js"></script>
+    <script src="rjs/factory.js"></script>
+    <script src="rjs/factory_i.js"></script>
+    <script src="rjs/boardcast.js"></script>
+    <script src="rjs/uploadService.js"></script>
+    <script src="rjs/zspecService.js"></script>
+
+    <script src="views/pub/pub.js"></script>
+
+  <script src="services/WwwhomeService.js"></script>
+  <script src="services/ArticleService.js"></script>
+  <script src="services/ArticleExtTxtService.js"></script>
+  <script src="services/ArticlechannelService.js"></script>
+  <script src="services/ArticleCommentService.js"></script>
+  <script src="services/MessageService.js"></script>
+  <script src="services/CashHisService.js"></script>
+  <script src="services/CashmemberStatiDayService.js"></script>
+  <script src="services/CashmemberStatiMonthService.js"></script>
+  <script src="services/UserService.js"></script>
+  <script src="services/MemberService.js"></script>
+  <script src="services/ScoreHisService.js"></script>
+  <script src="services/ScorememberStatiDayService.js"></script>
+  <script src="services/ScorememberStatiMonthService.js"></script>
+  <script src="services/OrderrQuestionService.js"></script>
+  <script src="services/OrderrQuestionFinishedService.js"></script>
+  <script src="services/OrderrQuestionDiscardService.js"></script>
+  <script src="services/OrderrQuickService.js"></script>
+  <script src="services/OrderrQuickFinishedService.js"></script>
+  <script src="services/OrderrQuickDiscardService.js"></script>
+  <script src="services/OrderrQuestionviewService.js"></script>
+  <script src="services/OrderrQuestionviewFinishedService.js"></script>
+  <script src="services/OrderrQuestionviewDiscardService.js"></script>
+  <script src="services/OrderrQuickviewService.js"></script>
+  <script src="services/OrderrQuickviewFinishedService.js"></script>
+  <script src="services/OrderrQuickviewDiscardService.js"></script>
+  <script src="services/QuestionService.js"></script>
+  <script src="services/QuestionTxtService.js"></script>
+  <script src="services/QuestionLinkMemberViewService.js"></script>
+  <script src="services/QuickService.js"></script>
+  <script src="services/QuickTxtService.js"></script>
+  <script src="services/QuickLinkMemberViewService.js"></script>
+  <script src="services/QuickTxtCommentService.js"></script>
+
+  <script src="views/test/clazz/WwwhomeList.js"></script>
+  <script src="views/test/clazz/WwwhomeShow.js"></script>
+  <script src="views/test/clazz/WwwhomeEdit.js"></script>
+  <script src="views/test/clazz/ArticleList.js"></script>
+  <script src="views/test/clazz/ArticleShow.js"></script>
+  <script src="views/test/clazz/ArticleEdit.js"></script>
+  <script src="views/test/clazz/ArticleExtTxtList.js"></script>
+  <script src="views/test/clazz/ArticleExtTxtShow.js"></script>
+  <script src="views/test/clazz/ArticleExtTxtEdit.js"></script>
+  <script src="views/test/clazz/ArticlechannelList.js"></script>
+  <script src="views/test/clazz/ArticlechannelShow.js"></script>
+  <script src="views/test/clazz/ArticlechannelEdit.js"></script>
+  <script src="views/test/clazz/ArticleCommentList.js"></script>
+  <script src="views/test/clazz/ArticleCommentShow.js"></script>
+  <script src="views/test/clazz/ArticleCommentEdit.js"></script>
+  <script src="views/test/clazz/MessageList.js"></script>
+  <script src="views/test/clazz/MessageShow.js"></script>
+  <script src="views/test/clazz/MessageEdit.js"></script>
+  <script src="views/test/clazz/CashHisList.js"></script>
+  <script src="views/test/clazz/CashHisShow.js"></script>
+  <script src="views/test/clazz/CashHisEdit.js"></script>
+  <script src="views/test/clazz/CashmemberStatiDayList.js"></script>
+  <script src="views/test/clazz/CashmemberStatiDayShow.js"></script>
+  <script src="views/test/clazz/CashmemberStatiDayEdit.js"></script>
+  <script src="views/test/clazz/CashmemberStatiMonthList.js"></script>
+  <script src="views/test/clazz/CashmemberStatiMonthShow.js"></script>
+  <script src="views/test/clazz/CashmemberStatiMonthEdit.js"></script>
+  <script src="views/test/clazz/UserList.js"></script>
+  <script src="views/test/clazz/UserShow.js"></script>
+  <script src="views/test/clazz/UserEdit.js"></script>
+  <script src="views/test/clazz/MemberList.js"></script>
+  <script src="views/test/clazz/MemberShow.js"></script>
+  <script src="views/test/clazz/MemberEdit.js"></script>
+  <script src="views/test/clazz/ScoreHisList.js"></script>
+  <script src="views/test/clazz/ScoreHisShow.js"></script>
+  <script src="views/test/clazz/ScoreHisEdit.js"></script>
+  <script src="views/test/clazz/ScorememberStatiDayList.js"></script>
+  <script src="views/test/clazz/ScorememberStatiDayShow.js"></script>
+  <script src="views/test/clazz/ScorememberStatiDayEdit.js"></script>
+  <script src="views/test/clazz/ScorememberStatiMonthList.js"></script>
+  <script src="views/test/clazz/ScorememberStatiMonthShow.js"></script>
+  <script src="views/test/clazz/ScorememberStatiMonthEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionFinishedList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionFinishedShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionFinishedEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionDiscardList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionDiscardShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionDiscardEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickList.js"></script>
+  <script src="views/test/clazz/OrderrQuickShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickFinishedList.js"></script>
+  <script src="views/test/clazz/OrderrQuickFinishedShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickFinishedEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickDiscardList.js"></script>
+  <script src="views/test/clazz/OrderrQuickDiscardShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickDiscardEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewFinishedList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewFinishedShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewFinishedEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewDiscardList.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewDiscardShow.js"></script>
+  <script src="views/test/clazz/OrderrQuestionviewDiscardEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewList.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewFinishedList.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewFinishedShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewFinishedEdit.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewDiscardList.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewDiscardShow.js"></script>
+  <script src="views/test/clazz/OrderrQuickviewDiscardEdit.js"></script>
+  <script src="views/test/clazz/QuestionList.js"></script>
+  <script src="views/test/clazz/QuestionShow.js"></script>
+  <script src="views/test/clazz/QuestionEdit.js"></script>
+  <script src="views/test/clazz/QuestionTxtList.js"></script>
+  <script src="views/test/clazz/QuestionTxtShow.js"></script>
+  <script src="views/test/clazz/QuestionTxtEdit.js"></script>
+  <script src="views/test/clazz/QuestionLinkMemberViewList.js"></script>
+  <script src="views/test/clazz/QuestionLinkMemberViewShow.js"></script>
+  <script src="views/test/clazz/QuestionLinkMemberViewEdit.js"></script>
+  <script src="views/test/clazz/QuickList.js"></script>
+  <script src="views/test/clazz/QuickShow.js"></script>
+  <script src="views/test/clazz/QuickEdit.js"></script>
+  <script src="views/test/clazz/QuickTxtList.js"></script>
+  <script src="views/test/clazz/QuickTxtShow.js"></script>
+  <script src="views/test/clazz/QuickTxtEdit.js"></script>
+  <script src="views/test/clazz/QuickLinkMemberViewList.js"></script>
+  <script src="views/test/clazz/QuickLinkMemberViewShow.js"></script>
+  <script src="views/test/clazz/QuickLinkMemberViewEdit.js"></script>
+  <script src="views/test/clazz/QuickTxtCommentList.js"></script>
+  <script src="views/test/clazz/QuickTxtCommentShow.js"></script>
+  <script src="views/test/clazz/QuickTxtCommentEdit.js"></script>
+
+
+</head>
+<body ng-app="zapp">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+<!--
+  The views will be rendered in the <ion-nav-view> directive below
+  Templates are in the /templates folder (but you could also
+  have templates inline in this html file if you'd like).
+-->
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

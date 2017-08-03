@@ -1,0 +1,16 @@
+<ion-view view-title='文章内容' cache-view='false'>
+  <ion-content class="has-header" >
+    <!--修改-->
+    <ul class="list">
+      <div class="row item item-input-wrapper" style="margin-top: 0px; padding-top:0px;" >
+        <div class="col col-20" style="text-align: left;padding-top: 10px;">
+          <span style="font-size: 16px;">文章内容：</span>
+        </div>
+        <div class="col col-80">
+          <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" ng-model="obj.txt"></textarea>
+        </div>
+      </div>
+      <li class="item"><a ng-click="update()" class="button button-full button-balanced">保存</a></li>
+    </ul>
+  </ion-content>
+</ion-view>

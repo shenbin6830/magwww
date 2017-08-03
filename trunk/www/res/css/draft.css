@@ -1,0 +1,39 @@
+.pk-submenu {
+  height: 39px;
+  line-height: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.pk-submenu, .subnav {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+.award-show-user, .pk-search-record-empty ul, .pk-submenu {
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+}
+.pk-answer-tab, .pk-submenu {
+  border-bottom: solid 1px #f2f2f2;
+}
+.pk-submenu-item a.active, .pk-submenu-item.active {
+  color: rgba(0,0,0,.87);
+}
+.pk-submenu-item {
+  -webkit-box-flex: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+  text-align: center;
+  font-size: 15px;
+  float: left;
+  display: inline-block;
+  color: rgba(0,0,0,.38);
+}

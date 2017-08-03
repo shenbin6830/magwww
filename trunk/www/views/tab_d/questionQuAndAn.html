@@ -1,0 +1,137 @@
+<!--QuestionList，一对一问题列表-->
+<ion-view view-title='我的' cache-view='false' hide-nav-bar="true">
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20">
+      <a ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left" style="font-size: 28px;color: #fff;"></i><span style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">我的</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item ng-if="act==0" style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">我问别人的问题</ion-item>
+      <ion-item ng-if="act==1" style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">别人问我的问题</ion-item>
+    </div>
+  </div>
+	<ion-content class="has-tabs has-header">
+        <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div ng-repeat="obj in list">
+      <div class="whoask_bg zhika-detail-mt0" style="margin-bottom: 10px;">
+        <div class="mt-lt40 clearfix">
+          <a>
+            <span style="color: rgba(0, 0, 0, 0.87);font-size:16px">向{{obj.memberAnString}}提问:</span></a>
+          <span ng-if="act==1" style="font-size:16px;color:#00AAFF;position:absolute;right:0;margin-right:15px;">¥{{obj.price}}</span>
+          <span ng-if="act==0" style="font-size:16px;color:#00AAFF;position:absolute;right:0;margin-right:15px;">¥{{obj.viewprice}}</span>
+        </div>
+        <p class="whoask_a1">{{obj.quest}}</p>
+      </div>
+      <div class="answer dont-repeat" data-free="0" data-price="5" is_voice="0" answer_id="9550" has_get="1">
+        <div ng-show="helpquestion&&obj.status==2" class="voice_text "  style="width: 225px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color: rgb(245, 166, 35);" ng-click="showAnswer(obj)">
+          <div class="yy" style="display: block;" >
+            <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+              <i class="iconfont icon-wenbenhuida"></i>
+            </div>
+            <div class="text_lable ng-binding">点击阅读</div>
+            <div class="text_num mr24">{{obj.answerwords}}个字&nbsp;<i class="icon ion-ios-book-outline"></i></div>
+          </div>
+        </div>
+        <div ng-if="helpquestion&&obj.status==1" class="voice_text "  style="width: 225px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color: rgb(245, 166, 35);" ng-click="showAnswer(obj)">
+          <div class="yy" style="display: block;" >
+            <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+              <i class="iconfont icon-wenbenhuida"></i>
+            </div>
+            <div class="text_lable ng-binding">对不起，大师还未回答</div>
+            <div class="text_num mr24"></div>
+          </div>
+        </div>
+      </div>
+      <div ng-if="act==1&&obj.status!=2" class="answer dont-repeat" data-free="0" data-price="5" is_voice="0" answer_id="9550" has_get="1">
+        <div class="voice_text "  style="width: 85px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color:blue;" ng-click="answerQuestion(obj,$event)">
+          <div class="yy" style="display: block;" >
+            <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+              <i class="iconfont icon-wenbenhuida"></i>
+            </div>
+            <div class="text_lable ng-binding">去回答</div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="helpcontent&&obj.status==2" class="text_box" style="width: 100%;background-color: rgb(255, 250, 242);">
+        <div class="text_i close_txt" style="width: 100%;">
+          <i class="iconfont icon-wenbenhuida wenbenhuida2"></i><button  ng-click="closeAnswer(obj)" class="button button-energized" style="width: 30%;padding-left: 20px;height:30px ">收起</button><p class="con_fr">From {{obj.memberAnString}}<i class="iconfont icon-chaoxituxinglogo"></i></p>
+        </div>
+        <!-- 修改答案（一对一回答）start
+          @author sjia
+          @Date 2017年4月11日 --下午9:45:14
+         -->
+        <br>
+        <div  ng-show="helpquestionupdate" ng-click="updateQuestion(obj,$event)" style="width: 100%;" >
+          <i ></i><button  ng-click="closeAnswer(obj)" class="button button-energized" style="width: 30%;padding-left: 20px;height:30px ">修改答案</button><p class="con_fr">From {{obj.memberAnString}}</p>
+        </div>
+        <div style="border:1px solid red;">
+        <div class="text_t" >
+          <p class="con_fr"></p>
+          <p>{{obj.questionTxt}}</p>
+        </div>
+        <button  ng-click="replyQuestion(obj,$event)" class="button button-energized" style="width: 30%;padding-left: 20px;height:30px ">回复</button>
+        </div>
+        <div style="border:1px solid blue;" ng-repeat="addobj in list1">
+        <div class="text_t" >
+          <p class="con_fr">From {{addobj.memberAnString}}</p>
+          <p>{{addobj.qa}}</p>
+        </div>
+        <button  ng-click="replyQuestion(obj,$event)" class="button button-energized" style="width: 30%;padding-left: 20px;height:30px ">再次回复</button>
+        </div>
+        <!--修改答案 end-->
+      </div>
+      <div class="messageitem-footer" ng-if="obj.status==2">
+        <div class="messageitem-payment" data-need_pay="0" data-qid="9550">
+          <div class="messageitem-value">
+            <span ng-click="good(obj)">赞一下</span>
+            <span  class="ask_value ng-isolate-scope" param="good" current-id="9550" praise-direc="expertscore"><i ng-click="good(obj)" class="icon ion-thumbsup" aria-hidden="true"></i><span class="col25 " ng-if="obj.ctype==1">1</span><span class="col25 " ng-if="obj.ctype!=1">0</span></span>
+            <span  ng-click="bad(obj)">踩一下</span>
+            <span class="ask_worth ng-isolate-scope" param="bad" current-id="9550" praise-direc="expertscore"><i ng-click="bad(obj)" class="icon ion-thumbsdown" id="bad_icon" aria-hidden="true"></i><span class="col25 " ng-if="obj.ctype==-1">1</span><span class="col25 " ng-if="obj.ctype!=-1">0</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+          <h1 class="title">我的浮动框标题</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="col col-80">
+            <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder="请填写你的回答"  ng-model="questionTxtobj.answer"></textarea>
+          </div>
+          <button style="text-align:center;width: 50%; height: 35px;border-radius:10px;background-color: #0c60ee;" ng-click="saveAnswer()"  >确定</button>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+    <!-- @author sjia @Date 2017-04-18 16:00 start-->
+    <script id="my-popover-update.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+          <h1 class="title">我的修改答案框</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="col col-80">
+            <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder="请填写你的回答"  ng-model="questionTxtobj.answer"></textarea>
+          </div>
+          <button style="text-align:center;width: 50%; height: 35px;border-radius:10px;background-color: #0c60ee;" ng-click="updateAnswer()" >修改答案</button>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+    <script id="my-popover-reply.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+          <h1 class="title">我的回复</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="col col-80">
+            <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder="请填写你的回复"  ng-model="questionAddobj.qa"></textarea>
+          </div>
+          <button style="text-align:center;width: 50%; height: 35px;border-radius:10px;background-color: #0c60ee;" ng-click="replyAnswer()" >回复</button>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+    <!-- @author sjia @Date 2017-04-18 16:00 end-->
+        <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+        <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+    </ion-content>
+</ion-view>

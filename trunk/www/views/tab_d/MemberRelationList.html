@@ -1,0 +1,21 @@
+<!--MemberRelationList，会员父子关系列表-->
+<ion-view view-title="会员父子关系列表" cache-view="false" >
+	<ion-nav-buttons side="right">
+	</ion-nav-buttons>
+	<ion-content class="has-tabs has-header">
+        <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="list">
+            <ion-item class="item-avatar" bindonce="" collection-repeat="obj in list"  collection-item-width="'100%'" collection-item-height="65px">
+                <img ng-src="{{obj.img1}}" reset-img-tn="" />
+                <p>
+				<span>序号ID:{{obj.id}}</span>
+				<span class="item-note ago" am-time-ago="obj.gmtCreate"></span>
+				<span ng-if="act==0">姓名:{{obj.memberIdMemberObj.myname}}</span>
+        <span ng-if="act==1">姓名:{{obj.memberChMemberObj.myname}}</span>
+				</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+        <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+    </ion-content>
+</ion-view>

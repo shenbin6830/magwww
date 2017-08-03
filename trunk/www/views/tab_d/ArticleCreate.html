@@ -1,0 +1,25 @@
+<!--QuickList，文章新建/编辑-->
+<ion-view view-title='文章' cache-view='false'>
+  <ion-content class="has-header" >
+	<!--修改-->
+	<ul class="list">
+    <li class="item">
+      <span class="fl" style="line-height: 40px;">文章标题：</span>
+      <input class="fl" type="text" placeholder="文章名称"  ng-model="obj.title" style="padding-left: 5px;width: 60%;">
+    </li>
+    <li class="item">
+      <span class="fl" style="line-height: 40px;">作者：</span>
+      <input class="fl" type="text" placeholder="作者"  ng-model="obj.author" style="padding-left: 5px;width: 60%;">
+    </li>
+    <div class="row item item-input-wrapper" style="margin-top: 0px; padding-top:0px;">
+      <div class="col col-20" style="text-align: left;padding-top: 10px;">
+        <span style="font-size: 16px;">文章简介：</span>
+      </div>
+      <div class="col col-80">
+        <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder="请输入文章简介"  ng-model="obj.intro"></textarea>
+      </div>
+    </div>
+    <li class="item"><a ng-click="save()" class="button button-full button-balanced">去完善文章内容</a></li>
+	</ul>
+  </ion-content>
+</ion-view>

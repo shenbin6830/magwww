@@ -1,0 +1,19 @@
+<ion-view view-title="扫码关注" hide-nav-bar="false" cache-view='false' style="background-color: #ebebeb;">
+  <ion-header-bar class="bar bar-header bar-light">
+    <h1 class="title">扫码关注</h1>
+    <!--<div class="buttons">
+      <button class="button header_right ion-android-share-alt" ng-click="share()" style="font-size: 20px!important; color: #7E5335;"></button>
+    </div>-->
+  </ion-header-bar>
+    <ion-content has-bouncing="false"><!--内容不会向下拖出上面的空白-->
+      <div style="border: none; width: 80%; margin:50px auto; border-radius: 5px; background-color: #fff;">
+        <a class="item item-avatar" href="" style="height: 114px; border: none; border-bottom: 1px solid #ccc; border-radius: 5px 5px 0 0; margin: 0px;">
+          <img reset_img="Doc" ng-src="{{obj.img1}}" style="width: 60px; height: 60px; border: 1px solid #eee; margin-left: 10px;">
+          <h2 style="margin-top: 10px; margin-left: 14px;"><b>{{obj.name}}</b> &nbsp;&nbsp;<sapn class="middle_size">{{obj.dlevelString}}</sapn></h2>
+          <p style="margin-left: 14px;">{{obj.productchannelIdString}}</p>
+          <p style="margin-left: 14px;">{{obj.company}}</p>
+        </a>
+        <img reset-img ng-src="{{obj.imgqr}}"  style="margin:0 auto;display: block;width: 70%; padding: 24px 0"/>
+      </div>
+    </ion-content>
+</ion-view>

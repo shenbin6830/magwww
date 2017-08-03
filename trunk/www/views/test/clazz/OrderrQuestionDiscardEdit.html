@@ -1,0 +1,29 @@
+<!--OrderrQuestionDiscardList，订单之一对一问题提问放弃新建/编辑-->
+<ion-view view-title='订单之一对一问题提问放弃' cache-view='false'>
+  <ion-nav-buttons side="right">
+		<h4></h4>
+  </ion-nav-buttons>
+  <ion-content class="has-header" >
+	<!--修改-->
+	<ul class="list">
+			<li class="item item-input item-select"><h2 class="input-label">支付状态</h2>
+				<p>
+					<select ng-model="obj.status"> 
+					<option ng-repeat="(key,value) in ao_OrderrQuestionDiscard_status" value="{{key}}" ng-selected="key==obj.status">{{value}}</option>
+					</select>
+				</p>
+			</li>
+			<li class="item item-input item-select"><h2 class="input-label">支付方式</h2>
+				<p>
+					<select ng-model="obj.itypePay"> 
+					<option ng-repeat="(key,value) in ao_OrderrQuestionDiscard_itypePay" value="{{key}}" ng-selected="key==obj.itypePay">{{value}}</option>
+					</select>
+				</p>
+			</li>
+		<li class="item item-input"><h2 class="input-label">会员</h2><p><input type="text" ng-model="obj.memberId" /></p></li>
+		<li class="item item-input"><h2 class="input-label">一对一问题ID</h2><p><input type="text" ng-model="obj.questionId" /></p></li>
+		<li class="item"><a ng-click="save()" class="button button-full button-balanced"><i class="icon ion-checkmark"></i>保存</a></li>
+		<li class="item"><a ng-click="" class="button button-full button-dark"><i class="icon ion-close"></i>取消</a></li>
+	</ul>
+  </ion-content>
+</ion-view>

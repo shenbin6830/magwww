@@ -1,0 +1,70 @@
+
+<!--Wwwhome，手机页首页配置详细信息-->
+<ion-view view-title='首页' hide-nav-bar="true" class="allweb" cache-view='false'>
+  <ion-nav-buttons side="right">
+    <h4></h4>
+  </ion-nav-buttons>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">首页</h1>
+    <div class="buttons">
+      <button class="button header_bottom icon ion-ios-more"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-tabs has-header tab_define" has-bouncing="false">
+    <div class="home_content">
+      <img class="bg_img" src="res/img/index/bg_home_01.jpg"/>
+      <div class="row content1">
+        <div class="col-90"><h4>命理星座微社区</h4></div>
+        <div class="col-10" ng-click="memberSign()"><i class="icon"></i></div>
+      </div>
+      <div class="content2">
+        <img class="bg_img" src="res/img/index/bg_home_02.png"/>
+        <ul>
+          <li class="zw">
+            <img src="res/img/index/icon_home_02.png" ng-click="gotoQuAndQu1()"/>
+          </li>
+          <li class="bz">
+            <img src="res/img/index/icon_home_03.png" ng-click="gotoQuAndQu2()"/>
+          </li>
+          <li class="xz">
+            <img src="res/img/index/icon_home_04.png" ng-click="gotoQuAndQu3()"/>
+          </li>
+          <li class="xx">
+            <img src="res/img/index/icon_home_05.png" ng-click="gotoQuAndQu4()"/>
+          </li>
+          <li class="tl">
+            <img src="res/img/index/icon_home_06.png" ng-click="gotoQuAndQu5()"/>
+          </li>
+        </ul>
+      </div>
+      <div class="content3">
+        <ul>
+          <li>
+            <a href="#/tab/quAndAnWwwhome/0" class="atxt">
+              <img src="res/img/index/icon_home_07.png"/>
+              <p>智答</p>
+            </a>
+          </li>
+          <li>
+            <a href="#/tab/quAndAnWwwhome/1" class="atxt">
+              <img src="res/img/index/icon_home_08.png"/>
+              <p>精选</p>
+            </a>
+          </li>
+          <li>
+            <a href="#/tab/ArticleList" class="atxt">
+              <img src="res/img/index/icon_home_09.png"/>
+              <p>文章</p>
+            </a>
+          </li>
+          <li>
+            <a href="#/tab/QuickListWwwhome/0" class="atxt">
+              <img src="res/img/index/icon_home_10.png"/>
+              <p>活动</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,89 @@
+<!--QuestionList，一对一问题列表-->
+<ion-view view-title='我的' cache-view='false' hide-nav-bar="true">
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20">
+      <a ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left"
+                                                               style="font-size: 28px;color: #fff;"></i><span
+        style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">我的</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item
+        style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">
+        我观看的问题
+      </ion-item>
+    </div>
+  </div>
+  <ion-content class="has-tabs has-header">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div ng-repeat="obj in list">
+
+      <div class="common-mb-ten  messageitem-inner whoask_bg zhika-detail-mt0 messagelist" style="margin-bottom: 10px;">
+        <div class="mt-lt40 clearfix">
+          <div class="messagelist clearfix" style="margin-bottom: 20px">
+            <!--头像
+                       {{obj.memberAnMemberObj.img1}}
+                         -->
+            <div class="line20 clearfix">
+
+              <span class="expert-user-list ">  {{obj.memberAnString}} 回答了 {{obj.memberQuString}} 的问题</span>
+              <span style="font-size:16px;color:#00AAFF;position:absolute;right:0;margin-right:15px;">发布时间：{{obj.gmtCreateString}}</span>
+            </div>
+          </div>
+          <a ng-href="#" href="#"></a>
+
+          <div>
+            <a class="messageitem-question z-messageitem-question">{{obj.questionIdQuestionObj.quest}}</a>
+          </div>
+
+        </div>
+        <div class="answer dont-repeat" data-free="0" data-price="5" is_voice="0" answer_id="9550" has_get="1">
+          <div ng-hide="helpquestion" class="voice_text "
+               style="width: 225px; border-radius: 22px; color: rgb(255, 255, 255); height: 40px; background-color: rgb(245, 166, 35);"
+               ng-click="showAnswer(obj)">
+            <div class="yy" style="display: block;">
+              <div class="text_i" style="margin-left:12px;margin-top: 4px;">
+                <i class="iconfont icon-wenbenhuida"></i>
+              </div>
+              <div class="text_lable ng-binding">点击阅读</div>
+              <div class="text_num mr24">{{obj.questionIdQuestionObj.answerwords}}个字&nbsp;<i
+                class="icon ion-ios-book-outline"></i></div>
+            </div>
+          </div>
+        </div>
+        <div ng-hide="helpcontent" class="text_box" style="width: 100%;background-color: rgb(255, 250, 242);">
+          <div class="text_i close_txt" style="width: 100%;">
+            <i class="iconfont icon-wenbenhuida wenbenhuida2"></i>
+            <button ng-click="closeAnswer(obj)" class="button button-energized"
+                    style="width: 30%;padding-left: 20px;height:30px ">收起
+            </button>
+            <p class="con_fr">From 点今<i class="iconfont icon-chaoxituxinglogo"></i></p>
+          </div>
+          <div class="messageitem-question z-messageitem-question">
+            <p>{{obj.questionTxt}}</p>
+          </div>
+        </div>
+        <div class="messageitem-footer">
+          <div class="messageitem-payment" data-need_pay="0" data-qid="9550">
+          <span class="" style="padding-left: 10px;">
+            观看费 ¥{{obj.questionIdQuestionObj.viewprice}}
+            </span>
+
+            <div class="messageitem-value">
+              <span ng-click="good(obj)">赞一下</span>
+              <span class="ask_value ng-isolate-scope" param="good" current-id="9550" praise-direc="expertscore"><i
+                ng-click="good(obj)" class="icon ion-thumbsup" aria-hidden="true"></i><span class="col25 "
+                                                                                            ng-if="obj.ctype==1">1</span><span
+                class="col25 " ng-if="obj.ctype!=1">0</span></span>
+              <span ng-click="bad(obj)">踩一下</span>
+              <span class="ask_worth ng-isolate-scope" param="bad" current-id="9550" praise-direc="expertscore"><i
+                ng-click="bad(obj)" class="icon ion-thumbsdown" id="bad_icon" aria-hidden="true"></i><span
+                class="col25 " ng-if="obj.ctype==-1">1</span><span class="col25 " ng-if="obj.ctype!=-1">0</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,75 @@
+<!--ArticleList，文章列表-->
+<ion-view view-title='文章列表' cache-view='false' hide-nav-bar="true">
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20" >
+      <a  ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left" style="font-size: 28px;color: #fff;"></i><span style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">首页</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item  style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;">文章列表</ion-item>
+    </div>
+  </div>
+  <ion-content class="has-tabs has-header">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="warp">
+      <ion-list class="list">
+        <!--<ion-item class="item-avatar" bindonce collection-repeat="obj in list" href="#/tab/ArticleExtTxt/{{obj.id}}">-->
+        <ion-item  bindonce collection-repeat="obj in list">
+          <!--<img ng-src="{{obj.img1}}" reset-img />-->
+          <div class="common-mb-ten">
+            <div class="messagelist">
+              <div class="messageitem-inner">
+                <div class="clearfix mt6">
+                  <!--跳转到用户信息界面,暂时用ArticleExtTxt代替-->
+                  <a ng-href="#/tab/ArticleExtTxt/{{obj.id}}" href="#/tab/ArticleExtTxt/{{obj.id}}">
+                    <div class="common-img-box20 fl">
+                      <img ng-src="{{obj.img1}}" class="common-img100" reset-img />
+                    </div>
+                    <div class="line20 clearfix ">
+                             <span class="expert-user-list ng-binding">作者:{{obj.author}}
+                                  <!--<span ng-bind-html="item.type|filterTypeText:item | trustHtml" class="ng-binding">回答了 <a href="/user/24582">胡歌</a> 的问题</span>
+                                  <span class="rt2 btn-icon-recommed"></span>-->
+                              </span>
+                      <span class="fr expert-user-list-rt ng-binding">X小时前</span>
+                    </div>
+                  </a>
+                </div>
+                  <p class="messageitem-question z-messageitem-question pk-common-text_lens ng-binding" style="color:black;font-size:large;" >{{obj.myname}}</p>
+                  <!--普通回答end-->
+                  <div class="answer dont-repeat need-login" ng-href="#/tab/ArticleExtTxt/{{obj.id}}"   href="#/tab/ArticleExtTxt/{{obj.id}}">
+                    <div class="default-culomn">
+                      <div class="left"></div>
+                      <div class="middle" >
+                        <p class="title" ><a ng-href="#/tab/ArticleExtTxt/{{obj.id}}"style="color:black;text-decoration:none;font-size:18px;font-weight:600">查看文章</a></p>
+                        <p class="info ng-binding"></p>
+                      </div>
+                      <div class="right"><i class="iconfont icon-dianjijinru"></i></div>
+                    </div>
+                  </div>
+                <div class="arcfooter pk-common-ellipsis">
+                  <span  class="ng-binding ng-scope">X get · </span>
+                  <span class="ng-binding">X 赞</span>
+                  <a ng-href="" href=""><span class="ng-binding" style="color:black;"> ·X评价</span></a>
+                  <!--文章分类（循环得出结果）-->
+                  <a ng-repeat="" ng-href="" class="ng-scope" href="/expert/classifydetail?id=63"><span class="ng-binding"></span></a>
+                </div>
+                <!--  <h2>{{obj.myname}}</h2>
+                  <p>
+                  <span>序号:{{obj.id}}</span>
+                  <span class="item-note ago" am-time-ago="obj.gmtCreate"></span>
+                  <span class="item-note ago" am-time-ago="obj.gmtModified"></span>
+                  <span>排列顺序:{{obj.priority}}</span>
+                  <span>文章频道内序号:{{obj.articlechannelIdString}}</span>
+                  </p>-->
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+    <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+
+  </ion-content>
+</ion-view>

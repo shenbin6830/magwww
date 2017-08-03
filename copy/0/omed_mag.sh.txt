@@ -1,0 +1,14 @@
+prj=mag
+dest=/opt/mag/static/$prj
+act=online_trunk
+
+cd prj/$prj
+svn update
+
+echo "rsync -r --exclude=".svn" --exclude="*.xml" trunk/ $dest/"
+rsync -r --exclude=".svn" --exclude="*.xml" trunk/ $dest/
+
+echo "rsync -r --exclude=".svn" --exclude="*.xml" copy/0/${act}/ $dest/"
+rsync -r --exclude=".svn" --exclude="*.xml" copy/0/${act}/ $dest/
+
+cd 

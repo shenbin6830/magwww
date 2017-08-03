@@ -1,0 +1,301 @@
+.fl {
+    float: left;
+}
+.fr {
+	float: right;
+}
+.expert-user-list-rt {
+	right: 16px;
+}
+.messageitem-payment {
+	position: relative;
+}
+.text_i.close_txt.close-text-center {
+	margin: -30px 0 0;
+	height: 40px;
+	line-height: 40px;
+	user-item-tic: -webkit-scrollbar;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.common-mb-ten {
+    margin-bottom: 10px;
+}
+.text_t {
+	font-size: 16px;
+	margin-top: 10px;
+	line-height: 24px;
+	color: #666;
+	word-break: break-all;
+	background: #FFFAF2;
+	padding-bottom: 15px;
+	border-radius: 0px 0px 3px 3px;
+}
+.text_i.close_txt.close-text-center {
+	margin: -30px 0 0;
+	height: 40px;
+	line-height: 40px;
+	user-item-tic: -webkit-scrollbar;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.text_box .text_i {
+	width: 100%;
+	height: 44px;
+	margin-top: -26px;
+	margin-left: 10px;
+}
+.messagelist {
+    margin-bottom: 10px;
+    background: #fff;
+}
+.common-img-box20 {
+    width: 20px;
+    height: 20px;
+}
+.text_num {
+	float: left;
+	position: absolute;
+	right: 17px;
+	line-height: 40px;
+}
+.text_box {
+	margin: 0px 0px 12px 0px;
+	height: auto;
+	padding: 30px 1px;
+	border-radius: 4px;
+	clear: both;
+}
+.expert-user-list {
+	right: 82px;
+	left: 41px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.con_fr {
+	float: right;
+	margin-right: 43px;
+	position: relative;
+	top: 5px;
+	line-height: 19px;
+}
+.z-messageitem-question {
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.44;
+	color: rgba(0,0,0,.87);
+	padding-bottom: 0;
+}
+.messageitem-question {
+	display: block;
+	padding-bottom: 12px;
+	line-height: 26px;
+	font-size: 17px;
+	color: #000;
+	opacity: .87;
+}
+.voice_text {
+	width: 235px;
+	height: 40px;
+	background: #0af;
+	overflow: hidden;
+	border-radius: 22px;
+	font-size: 16px;
+	color: #fff;
+	margin-top: 10px;
+	position: relative;
+	-webkit-transition: all 0.5s ease-in 0s;
+}
+.voice_textred  {
+  width: 235px;
+  height: 40px;
+  background: #f7766a;
+  overflow: hidden;
+  border-radius: 22px;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in 0s;
+}
+.z-messageitem-byline {
+	margin-bottom: 6px;
+}
+.common-img-box20, .common-img-box24, .common-img-box36, .common-img-box40, .common-img-box54, .common-img-box66 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.common-mb-ten .messagelist, .common-mb-ten:last-child {
+    margin-bottom: 0;
+}
+.common-img-box20, .common-img-box24, .common-img-box36, .common-img-box40, .common-img-box54, .common-img-box66 {position: relative;z-index: 1;overflow: hidden;}
+.line20, .mt-lt40, .mt25 {
+	line-height: 20px;
+}
+.text_lable {
+	float: left;
+	line-height: 40px;
+	padding-left: 6px;
+}
+.expert-user-list, .expert-user-list-rt {
+	position: absolute;
+	font-size: 13px;
+	color: rgba(0,0,0,.38);
+}
+.voice_text .text_i {
+	margin-left: 12px;
+	float: left;
+	overflow: hidden;
+	margin-left: 7px;
+}
+.messageitem-byline {
+	font-size: 16px;
+	line-height: 0;
+	margin-bottom: 10px;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: rgba(0,0,0,.38);
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.z-messageitem-byline {
+	margin-bottom: 6px;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+	display: none !important;
+}
+
+.messagelist .answer.dont-repeat {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.messagelist .answer {
+	padding-top: 10px;
+}
+.messagelist .answer.dont-repeat {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.messagelist .answer .audiojs, .messagelist .answer .voice_text {
+	margin-top: 0;
+}
+.voice_text .yy {
+	color: #fff;
+}
+.text_i {
+	margin-left: 12px;
+}
+.icon-wenbenhuida {
+	font-size: 28px;
+}
+.voice_text .text_i {
+	margin-left: 12px;
+	float: left;
+	overflow: hidden;
+	margin-left: 7px;
+}
+.text_i {
+	margin-left: 12px;
+}
+.icon-wenbenhuida {
+	font-size: 28px;
+}
+.wenbenhuida2 {
+	width: 24px;
+	position: absolute;
+}
+.con_fr.con-fr-center {
+	line-height: 40px;
+	top: 0;
+	vertical-align: middle;
+}
+.con_fr > i.i-center {
+	top: 0;
+}
+.messageitem-footer {
+	margin-top: 13px;
+	font-size: 14px;
+	line-height: 1;
+	color: #7b7b7b;
+}
+.clickPraise i, .loading-container, .messageitem-byline, .messageitem-payment, .mt3, .name-use-head img, .notify-tit-profile > i, .notify-tit-profile > span {
+	vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

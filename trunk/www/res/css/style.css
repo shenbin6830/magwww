@@ -1,0 +1,88 @@
+
+/*zerone自定义样式*/
+
+/*公共头部*/
+.header_bottom{ background-color: #1b1b1b!important; border-color: #1b1b1b!important;}
+
+/*公共尾部*/
+.tab_define{ bottom:50px!important;}/*用于去掉tab上面白色的几个像素*/
+.ion-Wwwhome-outline{
+  background: url(../img/tab/icon_tab_01.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-Wwwhome{
+  background: url(../img/tab/icon_tab_01.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-expertList-outline{
+  background: url(../img/tab/icon_tab_02.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-expertList{
+  background: url(../img/tab/icon_tab_02.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-Articlechannel-outline{
+  background: url(../img/tab/icon_tab_03.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-Articlechannel{
+  background: url(../img/tab/icon_tab_03.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-my-outline{
+  background: url(../img/tab/icon_tab_04.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+.ion-my{
+  background: url(../img/tab/icon_tab_04.png) no-repeat;
+  background-size: 26px;
+  background-position: center;
+}
+
+
+/*主页*/
+.home_content{ position: relative;}
+.home_content .bg_img{display: block; width: 100%;}
+.home_content .content1{ position: absolute; top: 0; left: 0; border: none; background: none; color: #fff;}
+.home_content .content1 h4{ margin-left: 16%!important; text-align: center; color: #fff; font-size: 18px; letter-spacing: 2px; margin: 4px;}
+.home_content .content1 .icon{margin: 4px auto; display: block; width: 20px; height: 100%; background: url(../img/index/icon_home_01.png) no-repeat center center; background-size: 20px;}
+.home_content .content2{position: absolute; top:14%; left: 0;}
+.home_content .content2 .bg_img{ width: 70%; margin: 0 auto; padding: 20px 0;}
+.home_content .content2 ul li{ width: 100%;}
+.home_content .content2 ul li img{ display: block; width: 18%; cursor: pointer;}
+.home_content .content2 ul li.zw{position: absolute; top:33%; left:7%;}
+.home_content .content2 ul li.bz{position: absolute; top:4%; left:22%;}
+.home_content .content2 ul li.xz{position: absolute; top:1%; left:53%;}
+.home_content .content2 ul li.xx{position: absolute; top:25%; left:72%;}
+.home_content .content2 ul li.tl{position: absolute; top:60%; left:70%;}
+.home_content .content3{position: absolute; top:71%; left: 0;}
+.home_content .content3 ul{ overflow: hidden; width: 80%; margin: 0 auto;}
+.home_content .content3 ul li{ float: left; width: 21%; margin:0 2%;}
+.home_content .content3 ul li a{display: block;}
+.home_content .content3 ul li a img{ display: block; width: 100%;}
+.home_content .content3 ul li a p{ text-decoration: none; text-align: center; color: #fff; font-size: 15px; line-height: 30px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

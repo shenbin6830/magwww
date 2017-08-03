@@ -1,0 +1,71 @@
+<ion-view cache-view='false'>
+  <ion-nav-title>{{title}}</ion-nav-title>
+  <div class="bar bar-header bar-positive row">
+    <div class="col col-20">
+      <a ng-click="fanhui()" style="text-decoration: none;"><i class="ion-chevron-left"
+                                                               style="font-size: 28px;color: #fff;"></i><span
+        style="color: #fff;margin-left: 4px;position: absolute;line-height: 30px;font-weight: 400;">我的</span></a>
+    </div>
+    <div class="col col-80" style="text-align: left;color:#fff;padding-top: 8px;">
+      <ion-item
+        style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;" >
+        我发布的悬赏列表
+      </ion-item>
+      <!--<ion-item-->
+        <!--style="text-align:center; width: 100%; margin: 0; padding: 0; background: none; border: none; color: #fff;" ng-if="act==1">-->
+       <!--抢答列表-->
+      <!--</ion-item>-->
+    </div>
+  </div>
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <ion-list class="list" ng-if="act==0">
+      <ion-item class="item-avatar" bindonce collection-repeat="obj in list" href="#/tab/QuickTxtList/{{obj.id}}/0/{{obj.priceeach}}" collection-item-width="'100%'" collection-item-height="25%">
+        <img ng-src="{{obj.img1}}" reset-img/>
+        <div ng-if="obj.status==3"  style="color: red;">悬赏结束可以选择满意答案</div>
+        <h2>{{obj.question}}</h2>
+        <p>
+          <span>创建时间：{{obj.gmtCreateString}}</span>
+          <span >类别：{{obj.articlechannelIdString}}</span>
+        </p>
+      </ion-item>
+    </ion-list>
+    <!--增加过滤器，抢答列表中只显示不是自己发布的和状态码为2的-->
+    <div ng-repeat="obj in list" >
+      <!-- status{'2':'开始抢答','3':'抢答结束','4'：未开始} -->
+      <div style="" class="day-home mt10" ng-if="obj.status>=2">
+        <div class="day-time pd-lr15 clearfix">
+          <div class="fl mr3 fs14">结束时间:</div>
+          <div class="fl day-times fs14" >{{obj.gmtOver|date:'yyyy-MM-dd HH:mm:ss' }}</div>
+          <p class="fr col-f26161 ht21">赏金 ¥{{obj.priceeach}}  </p>
+        </div>
+        <p class="day-tit pd-lr15">
+          {{obj.question}}
+        </p>
+
+        <div class="day-race">
+          <span class="fs14 col38">{{obj.answernum}} 人已回答</span>
+          <a class="daily-answer-btn need-login" ng-click="gotoQuick(obj,$event)">
+            <span class="race-answer-btn  fr">抢答</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar>
+          <h1 class="title">我的浮动框标题</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="col col-80">
+            <textarea row="5" style="height: 120px;width: 100%;border:0.5px #ddd solid;padding: 5px;overflow: visible;background-color: #fff !important;" placeholder=""  ng-model="quickTxtobj.answer"></textarea>
+          </div>
+          <button style="text-align:center;width: 50%; height: 35px;border-radius:10px;background-color: #0c60ee;" ng-click="saveQuick()" >确定</button>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+    <ion-infinite-scroll on-infinite="more()" distance="1%" ng-if="page.hasNextPage"></ion-infinite-scroll>
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!list" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+  </ion-content>
+</ion-view>

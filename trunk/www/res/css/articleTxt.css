@@ -1,0 +1,75 @@
+.pk-article-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+.common-fix-main {
+  overflow-y: scroll;
+  top: 0;
+  bottom: 44px;
+  -webkit-overflow-scrolling: touch;
+}
+.common-fix-foot, .common-fix-head, .common-fix-main {
+  position: fixed;
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+}
+.pk-article-content-img {
+  width: 100%;
+  min-height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+.pk-article-content-img {
+  height: 186px;
+}
+.pk-article-content-img {
+  height: 160px;
+}
+.bgfff, .nav ul li, .nav-bg {
+  background: #fff;
+}
+.pk-article-content-item {
+  width: 100%;
+  height: auto;
+  padding: 13px 16px 0;
+}
+.pk-article-content-item, .pk-write-article-title {
+  border-bottom: 1px solid #f2f2f2;
+  box-sizing: border-box;
+}
+
+.article-item-content {
+  width: 100%;
+  font-size: 16px;
+  padding-top: 14px;
+  line-height: 24px;
+}
+.article-item-content, .article-item-content p {
+  color: rgba(0,0,0,.87);
+}
+.article-item-content, .qs_list .title, .ques_word h2.ques_title, .tide-user-content, .weui_label, .whoask_bg .whoask_a1, body, html {
+  word-break: break-all;
+}
+.pk-article-content-item > h2 {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.87);
+  word-break: break-all;
+  margin-bottom: 9px;
+}
+body, button, canvas, dd, dl, em, form, h1, h2, h3, h4, h5, input, ol, p, select, strong, td, textarea, th, ul, video {
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  cursor: pointer;
+  font-size: 20px;
+}
+.notice a, body, html {
+  font-family: "Microsoft YaHei",simsun,"Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+html {
+  -webkit-text-size-adjust: none;
+}

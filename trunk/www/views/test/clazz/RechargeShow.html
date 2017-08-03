@@ -1,0 +1,21 @@
+<!--RechargeShow，充值项目详细信息-->
+<ion-view view-title='充值项目' cache-view='false'>
+  <ion-nav-buttons side="right">
+		<h4></h4>
+	  <a class="button icon ion-edit" href="#/tab/RechargeEdit/{{obj.id}}"></a>
+  </ion-nav-buttons>
+  <ion-content class="has-header" >
+	<ul class="list">
+		<li class="item">序号ID:{{obj.id}}</li>
+		<li class="item"><h2>创建时间</h2><p>{{obj.gmtCreateString}}</p></li>
+		<li class="item"><h2>状态</h2><p>{{obj.statusApplyPassRefuseString}}</p></li>
+		<li class="item">排列顺序:{{obj.priority}}</li>
+		<li class="item">充值项目名:{{obj.title}}</li>
+		<li class="item">图1</li>
+		<li class="item" style="height:120px"><img reset-img="" ng-src='{{obj.img1}}' style="height:120px" /></li>
+		<li class="item">支付金额:{{obj.price}}</li>
+		<li class="item">简介:{{obj.intro}}</li>
+	</ul>
+    <ion-spinner class="topic-spinner ng-hide" ng-show="!obj" ng-style="{'top':getHalfHeight()+'px'}"></ion-spinner>
+  </ion-content>
+</ion-view>
